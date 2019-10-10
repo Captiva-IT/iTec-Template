@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr" class="full-height">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ITec-Index</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <a class="navbar-brand" href="#">
+                <img src="./img/LogoMcDonald.png" height="30" alt="MDB logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Accueil.html">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Commandes.html">Commandes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Confirmations.html">Confirmations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Livraisons.html">Livraisons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Indicateurs.html">Indicateurs</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./Meteo.html">Météo</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                    <li class="nav-item avatar dropdown">
+                        <a class="nav-link p-0" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span>Restaurant 966</span>
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg"
+                                class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Mon Compte</a>
+                            <a class="dropdown-item" href="#">Reglages</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Se deconnecter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main Layout-->
+    <main class="py-5 px-5">
+        <div class="container">
+            <!-- Grid row -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card card-cascade narrower">
+                        <div class="px-4 py-4">
+                            <a class="weatherwidget-io" href="https://forecast7.com/fr/46d232d21/france/"
+                                data-label_1="FRANCE" data-label_2="WEATHER" data-font="Roboto"
+                                data-icons="Climacons Animated" data-theme="pure">FRANCE WEATHER</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid row -->
+            <div class="row" style="height: 50px"></div>
+        </div>
+    </main>
+    <!--Main Layout-->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript">
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+    </script>
+</body>
+
+</html>

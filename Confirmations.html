@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr" class="full-height">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ITec-Index</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Tabulator Bootstrap -->
+    <link href="css/bootstrap/tabulator_bootstrap4.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <a class="navbar-brand" href="#">
+                <img src="./img/LogoMcDonald.png" height="30" alt="MDB logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./Accueil.html">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Commandes.html">Commandes</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./Confirmations.html">Confirmations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Livraisons.html">Livraisons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Indicateurs.html">Indicateurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Meteo.html">Météo</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                    <li class="nav-item avatar dropdown">
+                        <a class="nav-link p-0" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span>Restaurant 966</span>
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg"
+                                class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Mon Compte</a>
+                            <a class="dropdown-item" href="#">Reglages</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Se deconnecter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main Layout-->
+    <main class="py-5 px-5">
+
+        <div class="fluid-container">
+            <!-- Grid row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Table with panel -->
+                    <div class="card card-cascade narrower">
+
+                        <div class="px-4 py-4">
+
+                            <div class="table-wrapper">
+                                <div id="example-table"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- Table with panel -->
+                </div>
+            </div>
+            <div class="row" style="height: 50px"></div>
+        </div>
+    </main>
+    <!--Main Layout-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fluid" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8">
+                                <h6 class="modal-title " id="exampleModalLabel">Commande Hub n° 0009213456</h6>
+                                <h3 class="d-block">Martin BROWER</h3>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <h6 class="text-danger">A transmettre avant le 27/11 à 09:30</h6>
+                                <h6>preparée le 22/11 à 14:43</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Collapse buttons -->
+                    <div class="mb-2">
+                        <a data-toggle="collapse" href="#collapseExample" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                        Message et commentaire de la commande
+                    </div>
+                    <!-- / Collapse buttons -->
+
+                    <!-- Collapsible element -->
+                    <div class="collapse mb-2" id="collapseExample">
+                        <div class="mt-3">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. Nihil anim
+                            keffiyeh helvetica,
+                            craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                        </div>
+                    </div>
+                    <!-- / Collapsible element -->
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="table-wrapper">
+                                <div id="example-table-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- Tabulator JavaScript -->
+    <script type="text/javascript" src="js/tabulator.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom Script -->
+    <script type="text/javascript">
+        var ajaxDataMock = [
+            { numeroBC: "0009213456", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
+            { numeroBC: "0009213457", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
+            { numeroBC: "0009213444", distributeur: "Martin BROWER", type: "Hub", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
+            { numeroBC: "0009213423", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
+            { numeroBC: "0009213459", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
+            { numeroBC: "0009213423", distributeur: "Martin BROWER", type: "Hub", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
+            { numeroBC: "0009213411", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
+        ];
+
+        var msgIcon = function (cell, formatterParams) {
+            return cell.getValue() + ' <a href="#"data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-envelope"></i></a>';
+        };
+
+        var badge = function (cell, formatterParams, onRendered) {
+            var result;
+
+            switch (cell.getValue()) {
+                case 'Marketing':
+                    result = "badge-secondary";
+                    break;
+                case 'Hub':
+                    result = "badge-primary";
+                    break;
+                default:
+                    result = "";
+            }
+            return '<span class="badge ' + result + '">' + cell.getValue() + '</span>';
+        };
+
+        var table = new Tabulator("#example-table", {
+            data: ajaxDataMock,           //load row data from array
+            layout: "fitColumns",      //fit columns to width of table
+            tooltips: true,            //show tool tips on cells
+            addRowPos: "top",          //when adding a new row, add it to the top of the table
+            history: true,             //allow undo and redo actions on the table
+            pagination: "local",       //paginate the data
+            paginationSize: 7,         //allow 7 rows per page of data
+            movableColumns: true,      //allow column order to be changed
+            resizableRows: true,       //allow row order to be changed
+            responsiveLayout: "collapse",//collapse columns that no longer fit on the table into a list under the row
+            initialSort: [             //set the initial sort order of the data
+                { column: "name", dir: "asc" },
+            ],
+            columns: [                 //define the table columns
+                { title: "Numero BC", field: "numeroBC", align: "left" },
+                { title: "Distributeur", field: "distributeur" },
+                { title: "type", field: "type", formatter: badge, width: 95, editor: "select" },
+                { title: "Transmise Le", field: "dateTransmission", sorter: "date", align: "center" },
+                { title: "Confirmee Le", field: "dateConfirmation", sorter: "date", align: "center" },
+            ],
+            rowClick: function (e, row) { //trigger an alert message when the row is clicked
+                $("#basicExampleModal").modal("show");
+
+            },
+
+        });
+
+        var ajaxDataModalMock = [
+            { stockage: "2", code: "80000.673", designation: "ACCOMPAGN CAFE 2", qteColis: "500,00/CT", commande: "12", confirme: "12", ecart: "0" },
+            { stockage: "1", code: "00456.341", designation: "MELANGE SEL POIVRE", qteColis: "12,00/CT", commande: "3", confirme: "3", ecart: "0" },
+            { stockage: "4", code: "12867.400", designation: "LIPTON GREEN TEA", qteColis: "180,00/CT", commande: "7", confirme: "7", ecart: "0" },
+            { stockage: "2", code: "01239.450", designation: "COCA COLA", qteColis: "80,00/CT", commande: "10", confirme: "10", ecart: "0" },
+
+        ];
+
+        var tabulator = {};
+
+        $(document).ready(function () {
+            $("#basicExampleModal").on('shown.bs.modal', function () {
+                tabulator = new Tabulator("#example-table-2", {
+                    data: ajaxDataModalMock,           //load row data from array
+                    layout: "fitColumns",      //fit columns to width of table
+                    pagination: "local",       //paginate the data
+                    paginationSize: 7,         //allow 7 rows per page of data
+                    movableColumns: true,      //allow column order to be changed
+                    resizableRows: true,       //allow row order to be changed
+                    responsiveLayout: "collapse",//collapse columns that no longer fit on the table into a list under the row
+                    columns: [                 //define the table columns
+                        { title: "Stockage", field: "stockage" },
+                        { title: "Code", field: "code" },
+                        { title: "Designation", field: "designation" },
+                        { title: "Qté/Colis", field: "qteColis" },
+                        { title: "Commandé", field: "commande" },
+                        { title: "Confirmé", field: "confirme" },
+                        { title: "Ecart", field: "ecart" },
+                    ],
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
