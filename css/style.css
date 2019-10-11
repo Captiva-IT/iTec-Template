@@ -35,3 +35,13 @@ body,
 .navbar.navbar-dark .breadcrumb .nav-item.active>.nav-link, .navbar.navbar-dark .navbar-nav .nav-item.active>.nav-link{
     background-color: #ffe100
 }
+
+.cursor{
+    cursor: pointer;
+}
+
+.dateTime{
+    font-family: 'Alfa Slab One', cursive;
+    color: white;
+    font-size: 30px;
+}

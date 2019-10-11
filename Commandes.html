@@ -131,7 +131,6 @@
                     <!-- Table with panel -->
                 </div>
             </div>
-            <div class="row" style="height: 50px"></div>
 
         </div>
     </main>
@@ -207,16 +206,9 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
+    <script type="text/javascript" src="js/DataMock.js"></script>
+
     <script type="text/javascript">
-        var ajaxDataMock = [
-            { numeroBC: "0009213456", distributeur: "Martin BROWER", type: "Marketing", aTransmettreAvant: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213457", distributeur: "Martin BROWER", type: "Marketing", aTransmettreAvant: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213444", distributeur: "Martin BROWER", type: "Hub", aTransmettreAvant: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213423", distributeur: "Martin BROWER", type: "Marketing", aTransmettreAvant: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213459", distributeur: "Martin BROWER", type: "Marketing", aTransmettreAvant: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213423", distributeur: "Martin BROWER", type: "Hub", aTransmettreAvant: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213411", distributeur: "Martin BROWER", type: "Marketing", aTransmettreAvant: "14/10/2019 à 00:00" },
-        ];
 
         var msgIcon = function (cell, formatterParams) {
             return cell.getValue() + ' <a href="#"data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-envelope"></i></a>';
@@ -239,7 +231,7 @@
         };
 
         var table = new Tabulator("#example-table", {
-            data: ajaxDataMock,           //load row data from array
+            data: commandeData,           //load row data from array
             layout: "fitDataFill",      //fit columns to width of table
             pagination: "local",       //paginate the data
             paginationSize: 7,         //allow 7 rows per page of data
@@ -257,20 +249,12 @@
             ],
         });
 
-        var ajaxDataModalMock = [
-            { stockage: "2", code: "80000.673", designation: "ACCOMPAGN CAFE 2", qteColis: "500,00/CT", prop: "0", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "NC", sfc: "NC", qte: "NC", inv: "", gamme: "TOUS", },
-            { stockage: "1", code: "00456.341", designation: "MELANGE SEL POIVRE", qteColis: "12,00/CT", prop: "NP", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "NC", sfc: "NC", qte: "NC", inv: "", gamme: "TOUS", },
-            { stockage: "4", code: "12867.400", designation: "LIPTON GREEN TEA", qteColis: "180,00/CT", prop: "0", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "0", sfc: "10/12/2013", qte: "0", inv: "", gamme: "NKF", },
-            { stockage: "2", code: "01239.450", designation: "COCA COLA", qteColis: "80,00/CT", prop: "0", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "0", sfc: "NC", qte: "NC", inv: "", gamme: "NKF", },
-
-        ];
-
         var tabulator = {};
 
         $(document).ready(function () {
             $("#basicExampleModal").on('shown.bs.modal', function () {
                 tabulator = new Tabulator("#example-table-2", {
-                    data: ajaxDataModalMock,           //load row data from array
+                    data: commandeDetailData,           //load row data from array
                     layout: "fitDataFill",      //fit columns to width of table
                     pagination: "local",       //paginate the data
                     paginationSize: 7,         //allow 7 rows per page of data

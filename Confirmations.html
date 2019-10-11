@@ -74,42 +74,34 @@
 
     <!--Main Layout-->
     <main class="py-5 px-5">
-
         <div class="fluid-container">
             <!-- Grid row -->
-
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-lg-12">
                     <!-- Table with panel -->
                     <div class="card card-cascade narrower">
-
                         <div class="px-4 py-4">
-
                             <div class="table-wrapper">
-                                <div id="example-table"></div>
+                                <div id="main-table"></div>
                             </div>
-
                         </div>
-
                     </div>
                     <!-- Table with panel -->
                 </div>
             </div>
-            <div class="row" style="height: 50px"></div>
         </div>
     </main>
     <!--Main Layout-->
 
     <!-- Modal -->
-    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fluid" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-md-8">
-                                <h6 class="modal-title " id="exampleModalLabel">Commande Hub n° 0009213456</h6>
+                                <h6 class="modal-title " id="modalLabel">Commande Hub n° 0009213456</h6>
                                 <h3 class="d-block">Martin BROWER</h3>
                             </div>
                             <div class="col-lg-4 col-md-4">
@@ -129,7 +121,7 @@
                             aria-controls="collapseExample">
                             <i class="far fa-envelope"></i>
                         </a>
-                        Message et commentaire de la commande
+                        <strong>Message et commentaire de la commande</strong>
                     </div>
                     <!-- / Collapse buttons -->
 
@@ -147,7 +139,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="table-wrapper">
-                                <div id="example-table-2"></div>
+                                <div id="detail-table"></div>
                             </div>
                         </div>
                     </div>
@@ -169,18 +161,10 @@
     <script type="text/javascript" src="js/tabulator.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Data Mock -->
+    <script type="text/javascript" src="js/DataMock.js"></script>
     <!-- Custom Script -->
     <script type="text/javascript">
-        var ajaxDataMock = [
-            { numeroBC: "0009213456", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213457", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213444", distributeur: "Martin BROWER", type: "Hub", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213423", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213459", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213423", distributeur: "Martin BROWER", type: "Hub", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
-            { numeroBC: "0009213411", distributeur: "Martin BROWER", type: "Marketing", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00" },
-        ];
-
         var msgIcon = function (cell, formatterParams) {
             return cell.getValue() + ' <a href="#"data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-envelope"></i></a>';
         };
@@ -201,55 +185,43 @@
             return '<span class="badge ' + result + '">' + cell.getValue() + '</span>';
         };
 
-        var table = new Tabulator("#example-table", {
-            data: ajaxDataMock,           //load row data from array
-            layout: "fitColumns",      //fit columns to width of table
-            tooltips: true,            //show tool tips on cells
-            addRowPos: "top",          //when adding a new row, add it to the top of the table
-            history: true,             //allow undo and redo actions on the table
-            pagination: "local",       //paginate the data
-            paginationSize: 7,         //allow 7 rows per page of data
-            movableColumns: true,      //allow column order to be changed
-            resizableRows: true,       //allow row order to be changed
-            responsiveLayout: "collapse",//collapse columns that no longer fit on the table into a list under the row
-            initialSort: [             //set the initial sort order of the data
-                { column: "name", dir: "asc" },
-            ],
-            columns: [                 //define the table columns
+        var table = new Tabulator("#main-table", {
+            data: confirmationData,
+            layout: "fitDataFill",
+            responsiveLayout: "collapse",
+            pagination: "local",
+            paginationSize: 7,
+            movableColumns: true,
+            resizableRows: true,
+            columns: [
+                { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                 { title: "Numero BC", field: "numeroBC", align: "left" },
                 { title: "Distributeur", field: "distributeur" },
                 { title: "type", field: "type", formatter: badge, width: 95, editor: "select" },
-                { title: "Transmise Le", field: "dateTransmission", sorter: "date", align: "center" },
-                { title: "Confirmee Le", field: "dateConfirmation", sorter: "date", align: "center" },
+                { title: "Transmise Le", field: "dateTransmission", width: 200, sorter: "date", align: "center" },
+                { title: "Confirmee Le", field: "dateConfirmation", width: 200, sorter: "date", align: "center" },
             ],
-            rowClick: function (e, row) { //trigger an alert message when the row is clicked
-                $("#basicExampleModal").modal("show");
-
+            rowClick: function (e, row) {
+                $("#modal").modal("show");
             },
-
         });
 
-        var ajaxDataModalMock = [
-            { stockage: "2", code: "80000.673", designation: "ACCOMPAGN CAFE 2", qteColis: "500,00/CT", commande: "12", confirme: "12", ecart: "0" },
-            { stockage: "1", code: "00456.341", designation: "MELANGE SEL POIVRE", qteColis: "12,00/CT", commande: "3", confirme: "3", ecart: "0" },
-            { stockage: "4", code: "12867.400", designation: "LIPTON GREEN TEA", qteColis: "180,00/CT", commande: "7", confirme: "7", ecart: "0" },
-            { stockage: "2", code: "01239.450", designation: "COCA COLA", qteColis: "80,00/CT", commande: "10", confirme: "10", ecart: "0" },
 
-        ];
 
         var tabulator = {};
 
         $(document).ready(function () {
-            $("#basicExampleModal").on('shown.bs.modal', function () {
-                tabulator = new Tabulator("#example-table-2", {
-                    data: ajaxDataModalMock,           //load row data from array
-                    layout: "fitColumns",      //fit columns to width of table
-                    pagination: "local",       //paginate the data
-                    paginationSize: 7,         //allow 7 rows per page of data
-                    movableColumns: true,      //allow column order to be changed
-                    resizableRows: true,       //allow row order to be changed
-                    responsiveLayout: "collapse",//collapse columns that no longer fit on the table into a list under the row
-                    columns: [                 //define the table columns
+            $("#modal").on('shown.bs.modal', function () {
+                tabulator = new Tabulator("#detail-table", {
+                    data: confirmationDetailData,
+                    layout: "fitDataFill",
+                    pagination: "local",
+                    paginationSize: 7,
+                    movableColumns: true,
+                    resizableRows: true,
+                    responsiveLayout: "collapse",
+                    columns: [
+                        { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                         { title: "Stockage", field: "stockage" },
                         { title: "Code", field: "code" },
                         { title: "Designation", field: "designation" },

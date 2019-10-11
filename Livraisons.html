@@ -114,25 +114,19 @@
 
             </div>
 
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-lg-12">
                     <!-- Table with panel -->
                     <div class="card card-cascade narrower">
-
                         <div class="px-4 py-4">
-
                             <div class="table-wrapper">
-
-                                <div id="example-table" class="table-light"></div>
+                                <div id="main-table" class="table-light"></div>
                             </div>
-
                         </div>
-
                     </div>
                     <!-- Table with panel -->
                 </div>
             </div>
-            <div class="row" style="height: 50px"></div>
         </div>
     </main>
     <!--Main Layout-->
@@ -150,17 +144,9 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
-    <script type="text/javascript">
-        var ajaxDataMock = [
-            { numeroBC: "0009213456", distributeur: "Martin BROWER", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00", numeroBl: "0045345", dateLivraison: "14/10/2019 à 00:00", status: "Validée" },
-            { numeroBC: "0009213457", distributeur: "Martin BROWER", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00", numeroBl: "0045345", dateLivraison: "14/10/2019 à 00:00", status: "Validée" },
-            { numeroBC: "0009213444", distributeur: "Martin BROWER", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00", numeroBl: "0045345", dateLivraison: "14/10/2019 à 00:00", status: "Validée" },
-            { numeroBC: "0009213423", distributeur: "Martin BROWER", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00", numeroBl: "0045345", dateLivraison: "14/10/2019 à 00:00", status: "Validée" },
-            { numeroBC: "0009213459", distributeur: "Martin BROWER", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00", numeroBl: "0045345", dateLivraison: "14/10/2019 à 00:00", status: "Validée" },
-            { numeroBC: "0009213423", distributeur: "Martin BROWER", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00", numeroBl: "0045345", dateLivraison: "14/10/2019 à 00:00", status: "Validée" },
-            { numeroBC: "0009213411", distributeur: "Martin BROWER", dateTransmission: "14/10/2019 à 00:00", dateConfirmation: "14/10/2019 à 00:00", numeroBl: "0045345", dateLivraison: "14/10/2019 à 00:00", status: "Validée" },
-        ];
+    <script type="text/javascript" src="js/DataMock.js"></script>
 
+    <script type="text/javascript">
         var msgIcon = function (cell, formatterParams) {
             return cell.getValue() + ' <a href="#"data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-envelope"></i></a>';
         };
@@ -181,70 +167,24 @@
             return '<span class="badge ' + result + '">' + cell.getValue() + '</span>';
         };
 
-        var table = new Tabulator("#example-table", {
-            data: ajaxDataMock,           //load row data from array
+        var mainTable = new Tabulator("#main-table", {
+            data: livraisonData,
             layout: "fitDataFill",
             responsiveLayout: "collapse",
-            pagination: "local",       //paginate the data
-            paginationSize: 7,         //allow 7 rows per page of data
-            movableColumns: true,      //allow column order to be changed
-            resizableRows: true,       //allow row order to be changed
-            columns: [                 //define the table columns
+            pagination: "local",
+            paginationSize: 7,
+            movableColumns: true,
+            resizableRows: true,
+            columns: [
                 { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                 { title: "Numero BC", field: "numeroBC", align: "left" },
-                { title: "Distributeur", field: "distributeur"},
+                { title: "Distributeur", field: "distributeur" },
                 { title: "Transmise Le", field: "dateTransmission", width: 200, sorter: "date", align: "center" },
                 { title: "Confirmee Le", field: "dateConfirmation", width: 200, sorter: "date", align: "center" },
-                { title: "Numero BL", field: "numeroBl"},
+                { title: "Numero BL", field: "numeroBl" },
                 { title: "Livraison le", field: "dateLivraison", width: 200, sorter: "date", align: "center" },
                 { title: "Status", field: "status", editor: "input" },
             ],
-        });
-
-        var ajaxDataModalMock = [
-            { stockage: "2", code: "80000.673", designation: "ACCOMPAGN CAFE 2", qteColis: "500,00/CT", prop: "0", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "NC", sfc: "NC", qte: "NC", inv: "", gamme: "TOUS", },
-            { stockage: "1", code: "00456.341", designation: "MELANGE SEL POIVRE", qteColis: "12,00/CT", prop: "NP", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "NC", sfc: "NC", qte: "NC", inv: "", gamme: "TOUS", },
-            { stockage: "4", code: "12867.400", designation: "LIPTON GREEN TEA", qteColis: "180,00/CT", prop: "0", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "0", sfc: "10/12/2013", qte: "0", inv: "", gamme: "NKF", },
-            { stockage: "2", code: "01239.450", designation: "COCA COLA", qteColis: "80,00/CT", prop: "0", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "0", sfc: "NC", qte: "NC", inv: "", gamme: "NKF", },
-
-        ];
-
-        var tabulator = {};
-
-        $(document).ready(function () {
-            $("#basicExampleModal").on('shown.bs.modal', function () {
-                tabulator = new Tabulator("#example-table-2", {
-                    data: ajaxDataModalMock,           //load row data from array
-                    layout: "fitColumns",      //fit columns to width of table
-                    tooltips: true,            //show tool tips on cells
-                    addRowPos: "top",          //when adding a new row, add it to the top of the table
-                    history: true,             //allow undo and redo actions on the table
-                    pagination: "local",       //paginate the data
-                    paginationSize: 7,         //allow 7 rows per page of data
-                    movableColumns: true,      //allow column order to be changed
-                    resizableRows: true,       //allow row order to be changed
-                    responsiveLayout: "collapse",//collapse columns that no longer fit on the table into a list under the row
-                    initialSort: [             //set the initial sort order of the data
-                        { column: "name", dir: "asc" },
-                    ],
-                    columns: [                 //define the table columns
-                        { title: "Stockage", field: "stockage" },
-                        { title: "Code", field: "code" },
-                        { title: "Designation", field: "designation" },
-                        { title: "Qté/Colis", field: "qteColis" },
-                        { title: "Prop", field: "prop" },
-                        { title: "Modification", field: "modification" },
-                        { title: "Com", field: "com" },
-                        { title: "Type", field: "type" },
-                        { title: "Liv.Jour", field: "livJour" },
-                        { title: "22/11", field: "stockTheorique" },
-                        { title: "SFC", field: "sfc" },
-                        { title: "Qte", field: "qte" },
-                        { title: "Inv", field: "inv" },
-                        { title: "Gamme", field: "gamme" },
-                    ],
-                });
-            });
         });
     </script>
 </body>
