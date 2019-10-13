@@ -201,7 +201,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fluid" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="container">
@@ -278,17 +278,14 @@
 
             $("#modal").on('shown.bs.modal', function () {
                 tabulator = new Tabulator("#detail-table", {
-                    data: commandeDetailData,           //load row data from array
-                    layout: "fitDataFill",      //fit columns to width of table
-                    pagination: "local",       //paginate the data
-                    paginationSize: 7,         //allow 7 rows per page of data
-                    movableColumns: true,      //allow column order to be changed
-                    resizableRows: true,       //allow row order to be changed
-                    responsiveLayout: "collapse",//collapse columns that no longer fit on the table into a list under the row
-                    initialSort: [             //set the initial sort order of the data
-                        { column: "name", dir: "asc" },
-                    ],
-                    columns: [                 //define the table columns
+                    data: commandeDetailData,
+                    layout: "fitDataFill",
+                    pagination: "local",
+                    paginationSize: 7,
+                    movableColumns: true,
+                    resizableRows: true,
+                    responsiveLayout: "collapse",
+                    columns: [
                         { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                         { title: "Stockage", field: "stockage" },
                         { title: "Code", field: "code" },

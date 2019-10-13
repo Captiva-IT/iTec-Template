@@ -95,7 +95,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fluid" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="container">
@@ -164,27 +164,9 @@
     <!-- Data Mock -->
     <script type="text/javascript" src="js/DataMock.js"></script>
     <!-- Custom Script -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- Custom Script -->
     <script type="text/javascript">
-        var msgIcon = function (cell, formatterParams) {
-            return cell.getValue() + ' <a href="#"data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-envelope"></i></a>';
-        };
-
-        var badge = function (cell, formatterParams, onRendered) {
-            var result;
-
-            switch (cell.getValue()) {
-                case 'Marketing':
-                    result = "badge-secondary";
-                    break;
-                case 'Hub':
-                    result = "badge-primary";
-                    break;
-                default:
-                    result = "";
-            }
-            return '<span class="badge ' + result + '">' + cell.getValue() + '</span>';
-        };
-
         var table = new Tabulator("#main-table", {
             data: confirmationData,
             layout: "fitDataFill",
@@ -197,7 +179,7 @@
                 { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                 { title: "Numero BC", field: "numeroBC", align: "left" },
                 { title: "Distributeur", field: "distributeur" },
-                { title: "type", field: "type", formatter: badge, width: 95, editor: "select" },
+                { title: "type", field: "type", formatter: badge, width: 95},
                 { title: "Transmise Le", field: "dateTransmission", width: 200, sorter: "date", align: "center" },
                 { title: "Confirmee Le", field: "dateConfirmation", width: 200, sorter: "date", align: "center" },
             ],
