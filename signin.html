@@ -16,7 +16,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="view">
 
     <!--Main Layout-->
     <main class="py-5 px-5">
@@ -26,20 +26,32 @@
             <div class="row mb-5 justify-content-around">
                 <!-- Default form login -->
                 <div class="col-lg-4 col-md-4">
-                    <form class="text-center rounded mb-0 border border-light p-5" action="#!">
+                    <!-- Card -->
+                    <div class="card">
+                        <!-- Card content -->
+                        <div class="card-body">
 
-                        <p class="h4 mb-4">Authentification</p>
+                            <form class="bg-white text-center  mb-0 px-4 py-5" action="#!">
 
-                        <!-- Email -->
-                        <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+                                <p class="h4 mb-4"><span class="green-mac">Authentification</span></p>
 
-                        <!-- Password -->
-                        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4"
-                            placeholder="Password">
+                                <!-- Email -->
+                                <input type="email" id="defaultLoginFormEmail" class="form-control mb-4"
+                                    placeholder="E-mail">
 
-                        <!-- Sign in button -->
-                        <button class="btn btn-info btn-block my-4" type="submit">Connexion</button>
-                    </form>
+                                <!-- Password -->
+                                <input type="password" id="defaultLoginFormPassword" class="form-control mb-4"
+                                    placeholder="Password">
+
+                                <!-- Sign in button -->
+                                <button class="btn btn-connexion btn-block my-4 mx-0" type="submit">Connexion</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                    <!-- Card -->
+
                 </div>
                 <!-- Default form login -->
 
@@ -47,18 +59,6 @@
         </div>
     </main>
     <!--Main Layout-->
-
-    <!-- Footer -->
-    <footer class="page-footer font-small blue">
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            <a href="#"> Captiva-it.com</a>
-        </div>
-        <!-- Copyright -->
-
-    </footer>
-    <!-- Footer -->
 
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>

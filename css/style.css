@@ -1,6 +1,7 @@
 .view {
-    background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg")no-repeat center center;
+    /* background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg")no-repeat center center; */
     background-size: cover;
+    background-color: #15532a;
 }
 
 .notification{
@@ -33,7 +34,16 @@ body,
 }
 
 .navbar.navbar-dark .breadcrumb .nav-item.active>.nav-link, .navbar.navbar-dark .navbar-nav .nav-item.active>.nav-link{
-    background-color: #ffe100
+    background-color: #ffe100;
+    color: #15532a;
+}
+
+.btn-connexion{
+    background-color: #ffe100 !important;
+    color: #15532a;
+}
+.btn-info:not([disabled]):not(.disabled).active, .btn-info:not([disabled]):not(.disabled):active, .show>.btn-info.dropdown-toggle{
+    background-color: #ffe100 !important;
 }
 
 .cursor{
@@ -44,4 +54,8 @@ body,
     font-family: 'Alfa Slab One', cursive;
     color: white;
     font-size: 30px;
+}
+
+.green-mac{
+    color: #15532a !important;
 }
