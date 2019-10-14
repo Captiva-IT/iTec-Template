@@ -76,20 +76,8 @@
     <!--Main Layout-->
     <main class="py-5 px-5">
         <div class="fluid-container">
-            <!-- Grid row -->
             <div class="row mb-5 justify-content-end">
-                <div class="col-lg-4">
-                    <div class="card blue">
-                        <div class="card-body text-center">
-                            <p class="dateTime">12-10-19 14:45</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-5">
-
-                <!-- Grid column -->
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-9 col-md-9">
                     <h2><strong>Note</strong></h2>
                     <section class="px-1 notification">
                         <p class="note note-primary"><strong>Note primary:</strong> Lorem, ipsum dolor sit amet
@@ -111,8 +99,16 @@
                             illo rem id nisi consequatur esse, sint perspiciatis soluta porro?</p>
                     </section>
                 </div>
-                <!-- Grid column -->
-
+                <div class="col-lg-3 align-middle">
+                    <br /><br />
+                    <div class="card btn-connexion">
+                        <br /><br />
+                        <div class="card-body text-center">
+                            <p class="dateTime green-mac" id="now"></p>
+                        </div>
+                        <br />
+                    </div>
+                </div>
             </div>
             <hr class="my-5">
             <div class="row">
@@ -271,8 +267,13 @@
     <script type="text/javascript" src="js/DataMock.js"></script>
 
     <script type="text/javascript">
+            var dt = new Date();
+            document.getElementById("now").innerHTML = dt.toLocaleString().substr(0, 18);
+        </script>
+
+    <script type="text/javascript">
         $(document).ready(function () {
-            $(".card").click(function () {
+            $(".card.cursor").click(function () {
                 $("#modal").modal("show");
             });
 
