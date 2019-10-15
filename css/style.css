@@ -18,7 +18,7 @@
 }
 .notification{
     height: 100%;
-    max-height: 330px;
+    min-height: 200px;
     /* overflow-y: auto; */
 }
 
@@ -82,3 +82,19 @@ body,
 .green-mac{
     color: #15532a !important;
 }
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box div {
+    width: 100px;
+    height: 100px;
+}
+
+.fs-35{
+    font-size: 27px;
+}
+
