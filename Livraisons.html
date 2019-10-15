@@ -175,12 +175,12 @@
                 { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                 { title: "Numero BC", field: "numeroBC", align: "left" },
                 { title: "Distributeur", field: "distributeur" },
-                { title: "Transmise Le", field: "dateTransmission", width: 200, sorter: "date", align: "center" },
-                { title: "Confirmee Le", field: "dateConfirmation", width: 200, sorter: "date", align: "center" },
+                { title: "Transmise Le", field: "dateTransmission", width: 200, sorter: "date", align: "center", responsive: 2 },
+                { title: "Confirmee Le", field: "dateConfirmation", width: 200, sorter: "date", align: "center" , responsive: 1},
                 { title: "Numero BL", field: "numeroBl" },
                 { title: "Livraison le", field: "dateLivraison", width: 200, sorter: "date", align: "center" },
-                { title: "Status", field: "status", editor: "input" },
-                { title: "opérations", field:"operations", formatter:pdfIcon}
+                { title: "Status", field: "status", editor: "input", responsive : 0 },
+                { title: "opérations", field:"operations", formatter:pdfIcon , responsive : 0}
             ],
         });
     </script>

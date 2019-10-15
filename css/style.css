@@ -55,6 +55,16 @@ body,
     background-color: #ffe100 !important;
     color: #15532a;
 }
+
+.bg-yellow-mac{
+    background-color: #ffe100;
+}
+.bg-green-mac{
+    background-color: #15532a;
+}
+.yellow-mac{
+    color: #ffe100 !important;
+}
 .btn-info:not([disabled]):not(.disabled).active, .btn-info:not([disabled]):not(.disabled):active, .show>.btn-info.dropdown-toggle{
     background-color: #ffe100 !important;
 }
