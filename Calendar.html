@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr" class="full-height">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ITec-Ma journée</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- FullCalendar -->
+    <link href='css/fullcalendar.css' rel='stylesheet' />
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Tabulator Bootstrap -->
+    <link href="css/bootstrap/tabulator_bootstrap4.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <a class="navbar-brand" href="#">
+                <img src="./img/LogoMcDonald.png" height="30" alt="MDB logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Accueil.html">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Commandes.html">Commandes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Confirmations.html">Confirmations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Livraisons.html">Livraisons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Indicateurs.html">Indicateurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Meteo.html">Météo</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./Calendar.html">Calendrier</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                    <li class="nav-item avatar dropdown">
+                        <a class="nav-link p-0" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span>Restaurant 966</span>
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg"
+                                class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Mon Compte</a>
+                            <a class="dropdown-item" href="#">Reglages</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Se deconnecter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main Layout-->
+    <main class="py-5 px-5">
+        <div class="fluid-container">
+            <!-- Grid row -->
+            <div class="row justify-content-end mb-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Table with panel -->
+                        <div class="card card-cascade narrower">
+                            <div class="px-4 py-4">
+                                <div class="table-wrapper">
+                                    <!-- TABS -->
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="myJourney-tab" data-toggle="tab"
+                                                href="#myJourney" role="tab" aria-controls="myJourney"
+                                                aria-selected="true">Ma journée</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="myPlanning-tab" data-toggle="tab" href="#myPlanning"
+                                                role="tab" aria-controls="myPlanning" aria-selected="false">Mon
+                                                planning</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- TABS-CONTENT -->
+                                    <div class="tab-content my-4" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="myJourney" role="tabpanel"
+                                            aria-labelledby="myJourney-tab">Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit. Nam fringilla suscipit magna, at posuere justo pharetra id.
+                                            Fusce lorem neque, imperdiet in nulla blandit, vulputate suscipit sem. Nulla
+                                            ullamcorper nisi id leo consequat, a mattis nunc tristique. Quisque at
+                                            luctus
+                                            mauris. Quisque ac augue mi. Nam ultrices maximus lorem. Nam suscipit
+                                            efficitur
+                                            tortor, eget ornare augue scelerisque eu. Vestibulum molestie sem in ex
+                                            sodales,
+                                            fermentum mollis lacus interdum. Etiam id ultrices arcu. Aenean eu urna
+                                            pulvinar, mattis ante ut, mollis justo. </div>
+                                        <div class="tab-pane fade" id="myPlanning" role="tabpanel"
+                                            aria-labelledby="myPlanning-tab">
+                                            <div id="calendar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- TABS-CONTENT -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Table with panel -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Main Layout-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form class="form-horizontal" method="POST" action="addEvent.php">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Ajout d'événement</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="col-sm-2 control-label">Couleur</label>
+                            <div class="col-sm-10">
+                                <select name="color" class="form-control" id="color">
+                                    <option value="">Choisir</option>
+                                    <option style="color:#0071c5;" value="#0071c5">&#9724; Bleu foncée</option>
+                                    <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                    <option style="color:#008000;" value="#008000">&#9724; Verte</option>
+                                    <option style="color:#FFD700;" value="#FFD700">&#9724; Jaune</option>
+                                    <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Rouge</option>
+                                    <option style="color:#000;" value="#000">&#9724; Noire</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="start" class="col-sm-2 control-label">Start date</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="start" class="form-control" id="start" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="end" class="col-sm-2 control-label">End date</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="end" class="form-control" id="end" readonly>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form class="form-horizontal" method="POST" action="editEventTitle.php">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit Event</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="col-sm-2 control-label">Color</label>
+                            <div class="col-sm-10">
+                                <select name="color" class="form-control" id="color">
+                                    <option value="">Choose</option>
+                                    <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                    <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                    <option style="color:#008000;" value="#008000">&#9724; Green</option>
+                                    <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                    <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                    <option style="color:#000;" value="#000">&#9724; Black</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label class="text-danger"><input type="checkbox" name="delete"> Delete
+                                        event</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="id" class="form-control" id="id">
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- FullCalendar -->
+    <script type="text/javascript" src='js/moment.min.js'></script>
+    <script type="text/javascript" src='js/fullcalendar.min.js'></script>
+    <!-- Tabulator JavaScript -->
+    <script type="text/javascript" src="js/tabulator.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script type="text/javascript" src="js/DataMock.js"></script>
+
+    <script type="text/javascript">
+        var dt = new Date();
+        document.getElementById("now").innerHTML = dt.toLocaleString().substr(0, 18);
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicWeek,basicDay'
+                },
+                defaultDate: '2019-10-15',
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                selectable: true,
+                selectHelper: true,
+                select: function (start, end) {
+
+                    $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
+                    $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
+                    $('#ModalAdd').modal('show');
+                },
+                eventRender: function (event, element) {
+                    element.bind('dblclick', function () {
+                        $('#ModalEdit #id').val(event.id);
+                        $('#ModalEdit #title').val(event.title);
+                        $('#ModalEdit #color').val(event.color);
+                        $('#ModalEdit').modal('show');
+                    });
+                },
+                eventDrop: function (event, delta, revertFunc) { // si changement de position
+                    edit(event);
+                },
+                eventResize: function (event, dayDelta, minuteDelta, revertFunc) { // si changement de longueur
+                    edit(event);
+                },
+                events: []
+            });
+
+            function edit(event) {
+                start = event.start.format('YYYY-MM-DD HH:mm:ss');
+                if (event.end) {
+                    end = event.end.format('YYYY-MM-DD HH:mm:ss');
+                } else {
+                    end = start;
+                }
+
+                id = event.id;
+
+                Event = [];
+                Event[0] = id;
+                Event[1] = start;
+                Event[2] = end;
+
+                $.ajax({
+                    url: 'editEventDate.php',
+                    type: "POST",
+                    data: { Event: Event },
+                    success: function (rep) {
+                        if (rep == 'OK') {
+                            alert('Saved');
+                        } else {
+                            alert('Could not be saved. try again.');
+                        }
+                    }
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>
