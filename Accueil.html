@@ -5,11 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>ITec-Index</title>
+    <title>ITec-Ma journée</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- FullCalendar -->
+    <link href='css/fullcalendar.css' rel='stylesheet' />
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Tabulator Bootstrap -->
@@ -79,124 +81,236 @@
     <!--Main Layout-->
     <main class="py-5 px-5">
         <div class="fluid-container">
-            <div class="row mb-5 justify-content-end">
-                <div class="col-lg-9 col-md-9">
-                    <h2><strong>Note</strong></h2>
-                    <section class="px-1 notification">
-                        <p class="note note-primary"><strong>Note primary:</strong> Lorem, ipsum dolor sit amet
-                            consectetur adipisicing
-                            elit. Cum doloremque officia laboriosam. Itaque ex obcaecati architecto! Qui
-                            necessitatibus delectus placeat
-                            illo rem id nisi consequatur esse, sint perspiciatis soluta porro?</p>
-
-                        <p class="note note-secondary"><strong>Note secondary:</strong> Lorem, ipsum dolor sit amet
-                            consectetur
-                            adipisicing elit. Cum doloremque officia laboriosam. Itaque ex obcaecati architecto! Qui
-                            necessitatibus
-                            delectus placeat illo rem id nisi consequatur esse, sint perspiciatis soluta porro?</p>
-
-                        <p class="note note-success"><strong>Note success:</strong> Lorem, ipsum dolor sit amet
-                            consectetur adipisicing
-                            elit. Cum doloremque officia laboriosam. Itaque ex obcaecati architecto! Qui
-                            necessitatibus delectus placeat
-                            illo rem id nisi consequatur esse, sint perspiciatis soluta porro?</p>
-                    </section>
-                </div>
-                <div class="col-lg-3 align-middle">
-                    <br /><br />
-                    <div class="card btn-connexion">
-                        <br /><br />
-                        <div class="card-body text-center">
-                            <p class="dateTime green-mac" id="now"></p>
-                        </div>
-                        <br />
-                    </div>
-                </div>
-            </div>
-            <hr class="my-5">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <h2><strong>Livraisons</strong></h2>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3">
-                            <div class="card cursor red lighten-2 mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong>15:30 / 16:30</strong></h5>
-                                    <p class="card-text">Livraison de</p>
-                                    <p class="card-text text-center"><strong>Martin BROWER</strong></p>
-                                    <p class="card-text"><span class="badge badge-primary">Générale</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                            <div class="card cursor mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong>15:30 / 16:30</strong></h5>
-                                    <p class="card-text">Livraison de</p>
-                                    <p class="card-text text-center"><strong>Martin BROWER</strong></p>
-                                    <p class="card-text"><span class="badge badge-primary">Générale</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                            <div class="card cursor mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong>15:30 / 16:30</strong></h5>
-                                    <p class="card-text">Livraison de</p>
-                                    <p class="card-text text-center"><strong>Martin BROWER</strong></p>
-                                    <p class="card-text"><span class="badge badge-primary">Générale</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                            <div class="card cursor red lighten-2 mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong>15:30 / 16:30</strong></h5>
-                                    <p class="card-text">Livraison de</p>
-                                    <p class="card-text text-center"><strong>Martin BROWER</strong></p>
-                                    <p class="card-text"><span class="badge badge-primary">Générale</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                            <div class="card cursor mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong>15:30 / 16:30</strong></h5>
-                                    <p class="card-text">Livraison de</p>
-                                    <p class="card-text text-center"><strong>Martin BROWER</strong></p>
-                                    <p class="card-text"><span class="badge badge-primary">Générale</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                            <div class="card cursor mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong>15:30 / 16:30</strong></h5>
-                                    <p class="card-text">Livraison de</p>
-                                    <p class="card-text text-center"><strong>Martin BROWER</strong></p>
-                                    <p class="card-text"><span class="badge badge-primary">Générale</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                            <div class="card cursor mb-4">
-                                <div class="card-body">
-                                    <h5 class="card-title"><strong>15:30 / 16:30</strong></h5>
-                                    <p class="card-text">Livraison de</p>
-                                    <p class="card-text text-center"><strong>Martin BROWER</strong></p>
-                                    <p class="card-text"><span class="badge badge-primary">Générale</span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
             <!-- Grid row -->
+            <div class="row justify-content-end mb-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Table with panel -->
+                        <div class="card card-cascade narrower">
+                            <div class="px-4 py-4">
+                                <div class="table-wrapper">
+                                    <!-- TABS -->
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="myJourney-tab" data-toggle="tab"
+                                                href="#myJourney" role="tab" aria-controls="myJourney"
+                                                aria-selected="true">Ma journée</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="myPlanning-tab" data-toggle="tab" href="#myPlanning"
+                                                role="tab" aria-controls="myPlanning" aria-selected="false">Mon
+                                                planning</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- TABS-CONTENT -->
+                                    <div class="tab-content my-4" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="myJourney" role="tabpanel"
+                                            aria-labelledby="myJourney-tab">
+                                            <div class="row mb-5 justify-content-end col-container">
+                                                <div class="col col-lg-9 col-md-9">
+                                                    <section class="px-1 notification">
+                                                        <p class="note note-success inheritHeight"><strong>Note
+                                                                success:</strong> Lorem, ipsum dolor sit amet
+                                                            consectetur adipisicing
+                                                            elit. Cum doloremque officia laboriosam. Itaque ex obcaecati
+                                                            architecto! Qui
+                                                            necessitatibus delectus placeat
+                                                            illo rem id nisi consequatur esse, sint perspiciatis soluta
+                                                            porro?</p>
+                                                    </section>
+                                                </div>
+                                                <div class="col col-lg-3 align-middle">
+                                                    <div class="card bg-green-mac h-100">
+                                                        <div class="card-body text-center">
+                                                            <p class="dateTime yellow-mac" id="now"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="my-5">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <h2><strong>Livraisons</strong></h2>
+                                                    <div class="row">
+                                                        <div class="col-lg-3 col-md-4">
+                                                            <div class="card cursor red darken-2 mb-4">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title"><strong>15:30 /
+                                                                            16:30</strong></h5>
+                                                                    <p class="card-text white-text">Livraison de</p>
+                                                                    <p class="card-text white-text text-center">
+                                                                        <strong>Martin BROWER</strong></p>
+                                                                    <p class="card-text white-text"><span
+                                                                            class="badge badge-primary">Générale</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-4">
+                                                            <div class="card cursor green darken-2 mb-4">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title"><strong>15:30 /
+                                                                            16:30</strong></h5>
+                                                                    <p class="card-text white-text">Livraison de</p>
+                                                                    <p class="card-text white-text text-center">
+                                                                        <strong>Martin BROWER</strong></p>
+                                                                    <p class="card-text white-text"><span
+                                                                            class="badge badge-primary">Générale</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-4">
+                                                            <div class="card cursor green darken-2 mb-4">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title"><strong>15:30 /
+                                                                            16:30</strong></h5>
+                                                                    <p class="card-text white-text">Livraison de</p>
+                                                                    <p class="card-text white-text text-center">
+                                                                        <strong>Martin BROWER</strong></p>
+                                                                    <p class="card-text white-text"><span
+                                                                            class="badge badge-primary">Générale</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-4">
+                                                            <div class="card cursor red darken-4 mb-4">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title"><strong>15:30 /
+                                                                            16:30</strong></h5>
+                                                                    <p class="card-text white-text">Livraison de</p>
+                                                                    <p class="card-text white-text text-center">
+                                                                        <strong>Martin BROWER</strong></p>
+                                                                    <p class="card-text white-text"><span
+                                                                            class="badge badge-primary">Générale</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-4">
+                                                            <div class="card cursor green darken-2 mb-4">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title"><strong>15:30 /
+                                                                            16:30</strong></h5>
+                                                                    <p class="card-text white-text">Livraison de</p>
+                                                                    <p class="card-text white-text text-center">
+                                                                        <strong>Martin BROWER</strong></p>
+                                                                    <p class="card-text white-text"><span
+                                                                            class="badge badge-primary">Générale</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-4">
+                                                            <div class="card cursor green darken-2 mb-4">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title"><strong>15:30 /
+                                                                            16:30</strong></h5>
+                                                                    <p class="card-text white-text">Livraison de</p>
+                                                                    <p class="card-text white-text text-center">
+                                                                        <strong>Martin BROWER</strong></p>
+                                                                    <p class="card-text white-text"><span
+                                                                            class="badge badge-primary">Générale</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-4">
+                                                            <div class="card cursor green darken-2 mb-4">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title"><strong>15:30 /
+                                                                            16:30</strong></h5>
+                                                                    <p class="card-text white-text">Livraison de</p>
+                                                                    <p class="card-text white-text text-center">
+                                                                        <strong>Martin BROWER</strong></p>
+                                                                    <p class="card-text white-text"><span
+                                                                            class="badge badge-primary">Générale</span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="myPlanning" role="tabpanel"
+                                            aria-labelledby="myPlanning-tab">
+                                            <div id="calendar"></div>
+                                        </div>
+                                    </div>
+                                    <!-- TABS-CONTENT -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Table with panel -->
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <!--Main Layout-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form class="form-horizontal" method="POST" action="addEvent.php">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Ajout d'événement</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="col-sm-2 control-label">Couleur</label>
+                            <div class="col-sm-10">
+                                <select name="color" class="form-control" id="color">
+                                    <option value="">Choisir</option>
+                                    <option style="color:#0071c5;" value="#0071c5">&#9724; Bleu foncée</option>
+                                    <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                    <option style="color:#008000;" value="#008000">&#9724; Verte</option>
+                                    <option style="color:#FFD700;" value="#FFD700">&#9724; Jaune</option>
+                                    <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Rouge</option>
+                                    <option style="color:#000;" value="#000">&#9724; Noire</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="start" class="col-sm-2 control-label">Start date</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="start" class="form-control" id="start" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="end" class="col-sm-2 control-label">End date</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="end" class="form-control" id="end" readonly>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -256,12 +370,71 @@
 
     <!-- Modal -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form class="form-horizontal" method="POST" action="editEventTitle.php">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit Event</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="col-sm-2 control-label">Color</label>
+                            <div class="col-sm-10">
+                                <select name="color" class="form-control" id="color">
+                                    <option value="">Choose</option>
+                                    <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                    <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                    <option style="color:#008000;" value="#008000">&#9724; Green</option>
+                                    <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                    <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                    <option style="color:#000;" value="#000">&#9724; Black</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label class="text-danger"><input type="checkbox" name="delete"> Delete
+                                        event</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="id" class="form-control" id="id">
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- FullCalendar -->
+    <script type="text/javascript" src='js/moment.min.js'></script>
+    <script type="text/javascript" src='js/fullcalendar.min.js'></script>
     <!-- Tabulator JavaScript -->
     <script type="text/javascript" src="js/tabulator.min.js"></script>
     <!-- MDB core JavaScript -->
@@ -270,9 +443,9 @@
     <script type="text/javascript" src="js/DataMock.js"></script>
 
     <script type="text/javascript">
-            var dt = new Date();
-            document.getElementById("now").innerHTML = dt.toLocaleString().substr(0, 18);
-        </script>
+        var dt = new Date();
+        document.getElementById("now").innerHTML = dt.toLocaleString().substr(0, 18);
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -311,6 +484,73 @@
 
         });
 
+        $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicWeek,basicDay'
+                },
+                defaultDate: '2019-10-15',
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                selectable: true,
+                selectHelper: true,
+                select: function (start, end) {
+
+                    $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
+                    $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
+                    $('#ModalAdd').modal('show');
+                },
+                eventRender: function (event, element) {
+                    element.bind('dblclick', function () {
+                        $('#ModalEdit #id').val(event.id);
+                        $('#ModalEdit #title').val(event.title);
+                        $('#ModalEdit #color').val(event.color);
+                        $('#ModalEdit').modal('show');
+                    });
+                },
+                eventDrop: function (event, delta, revertFunc) { // si changement de position
+                    edit(event);
+                },
+                eventResize: function (event, dayDelta, minuteDelta, revertFunc) { // si changement de longueur
+                    edit(event);
+                },
+                events: []
+            });
+
+            function edit(event) {
+                start = event.start.format('YYYY-MM-DD HH:mm:ss');
+                if (event.end) {
+                    end = event.end.format('YYYY-MM-DD HH:mm:ss');
+                } else {
+                    end = start;
+                }
+
+                id = event.id;
+
+                Event = [];
+                Event[0] = id;
+                Event[1] = start;
+                Event[2] = end;
+
+                $.ajax({
+                    url: 'editEventDate.php',
+                    type: "POST",
+                    data: { Event: Event },
+                    success: function (rep) {
+                        if (rep == 'OK') {
+                            alert('Saved');
+                        } else {
+                            alert('Could not be saved. try again.');
+                        }
+                    }
+                });
+            }
+
+        })
+        $(document).ready(function () {
+        });
 
     </script>
 </body>

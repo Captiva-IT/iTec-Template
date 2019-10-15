@@ -4,9 +4,22 @@
     background-color: #15532a;
 }
 
+.col-container {
+    display: flex;
+    width: 100%;
+}
+.col {
+    flex: 1;
+    padding: 16px;
+}
+
+.inheritHeight{
+    height: inherit;
+}
 .notification{
+    height: 100%;
     max-height: 330px;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 .navbar {
@@ -41,6 +54,16 @@ body,
 .btn-connexion{
     background-color: #ffe100 !important;
     color: #15532a;
+}
+
+.bg-yellow-mac{
+    background-color: #ffe100;
+}
+.bg-green-mac{
+    background-color: #15532a;
+}
+.yellow-mac{
+    color: #ffe100 !important;
 }
 .btn-info:not([disabled]):not(.disabled).active, .btn-info:not([disabled]):not(.disabled):active, .show>.btn-info.dropdown-toggle{
     background-color: #ffe100 !important;
