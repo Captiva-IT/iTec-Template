@@ -99,31 +99,32 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="container">
-                            <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <h6 class="modal-title " id="exampleModalLabel">Commande Hub n° 0009213456</h6>
-                                        <h3 class="d-block">Martin BROWER</h3>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6 class="text-danger">A transmettre avant le</h6>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6 class="text-danger">27/11 à 09:30</h6>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6>preparée le</h6>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6>22/11 à 14:43</h6>
-                                            </div>
-                                        </div>
-                                        <h6> </h6>
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <h6 class="modal-title " id="exampleModalLabel">Commande Hub n° 0009213456</h6>
+                                <h3 class="d-block">Martin BROWER</h3>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <table>
+                                    <tr>
+                                        <td align="right">
+                                            <h5>A transmettre avant le&nbsp;</h5>
+                                        </td>
+                                        <td>
+                                            <h5 class="text-danger">27/11 à 09:30</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <h5>Preparée le&nbsp;</h5>
+                                        </td>
+                                        <td>
+                                            <h5>22/11 à 14:43</h5>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -186,6 +187,7 @@
             data: confirmationData,
             layout: "fitDataFill",
             responsiveLayout: "collapse",
+            responsiveLayoutCollapseStartOpen: false,
             pagination: "local",
             paginationSize: 7,
             movableColumns: true,
@@ -194,7 +196,7 @@
                 { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                 { title: "Numero BC", field: "numeroBC", align: "left" },
                 { title: "Distributeur", field: "distributeur" },
-                { title: "type", field: "type", formatter: badge, width: 95},
+                { title: "type", field: "type", formatter: badge, width: 95 },
                 { title: "Transmise Le", field: "dateTransmission", width: 200, sorter: "date", align: "center" },
                 { title: "Confirmee Le", field: "dateConfirmation", width: 200, sorter: "date", align: "center" },
             ],
@@ -217,7 +219,7 @@
                     movableColumns: true,
                     resizableRows: true,
                     responsiveLayout: "collapse",
-					responsiveLayoutCollapseStartOpen:false,
+                    responsiveLayoutCollapseStartOpen: false,
                     columns: [
                         { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                         { title: "Stockage", field: "stockage" },

@@ -145,10 +145,24 @@
                                 <h3 class="d-block">Martin BROWER</h3>
                             </div>
                             <div class="col-lg-6 col-md-6">
-							<table>
-							<tr><td align="right"><h5>A transmettre avant le&nbsp;</h5></td><td><h5 class="text-danger">27/11 à 09:30</h5></td></tr>
-							<tr><td align="right"><h5>Preparée le&nbsp;</h5></td><td><h5>22/11 à 14:43</h5></td></tr>
-							</table>
+                                <table>
+                                    <tr>
+                                        <td align="right">
+                                            <h5>A transmettre avant le&nbsp;</h5>
+                                        </td>
+                                        <td>
+                                            <h5 class="text-danger">27/11 à 09:30</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <h5>Preparée le&nbsp;</h5>
+                                        </td>
+                                        <td>
+                                            <h5>22/11 à 14:43</h5>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -212,20 +226,21 @@
 
         var table = new Tabulator("#main-table", {
             data: commandeData,           //load row data from array
-            layout: "fitDataFill",      //fit columns to width of table
+            layout: "fitColumns",      //fit columns to width of table
             pagination: "local",       //paginate the data
             paginationSize: 7,         //allow 7 rows per page of data
             movableColumns: true,      //allow column order to be changed
             resizableRows: true,       //allow row order to be changed
             responsiveLayout: "collapse",//collapse columns that no longer fit on the table into a list under the row
+            responsiveLayoutCollapseStartOpen: false,
             columns: [                 //define the table columns
                 { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
-                { title: "Mid", field: "mid", editor: "input" },
-                { title: "Numero BC", field: "numeroBC", formatter: msgIcon, align: "left" },
-                { title: "type", field: "type", formatter: badge, width: 95},
+                { title: "Mid", field: "mid" },
+                { title: "Numero BC", field: "numeroBC", badge, width: 150, formatter: msgIcon, align: "left" },
+                { title: "type", field: "type", formatter: badge },
                 { title: "A transmettre avant le", field: "aTransmettreAvant", sorter: "date", align: "center" },
-                { title: "Transmise Le", field: "tranmiseLe", width: 130, sorter: "date", align: "center" },
-                { title: "Confirmee Le", field: "confirmeLe", width: 130, sorter: "date", align: "center" },
+                { title: "Transmise Le", field: "tranmiseLe", minWidth: 130, sorter: "date", align: "center" },
+                { title: "Confirmee Le", field: "confirmeLe", minWidth: 130, sorter: "date", align: "center" },
             ],
         });
 
@@ -236,12 +251,12 @@
                 tabulator = new Tabulator("#detail-table", {
                     data: commandeDetailData,
                     layout: "fitDataFill",
-                    pagination: "local",  
-                    paginationSize: 7,    
-                    movableColumns: true, 
-                    resizableRows: true,  
+                    pagination: "local",
+                    paginationSize: 7,
+                    movableColumns: true,
+                    resizableRows: true,
                     responsiveLayout: "collapse",
-					responsiveLayoutCollapseStartOpen:false,
+                    responsiveLayoutCollapseStartOpen: false,
                     columns: [
                         { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                         { title: "Stockage", field: "stockage" },

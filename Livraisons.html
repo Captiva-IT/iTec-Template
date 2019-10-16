@@ -167,6 +167,7 @@
             data: livraisonData,
             layout: "fitDataFill",
             responsiveLayout: "collapse",
+            responsiveLayoutCollapseStartOpen:false,
             pagination: "local",
             paginationSize: 7,
             movableColumns: true,
@@ -180,7 +181,7 @@
                 { title: "Numero BL", field: "numeroBl" },
                 { title: "Livraison le", field: "dateLivraison", width: 200, sorter: "date", align: "center" },
                 { title: "Status", field: "status", editor: "input", responsive : 0 },
-                { title: "opérations", field:"operations", formatter:pdfIcon , responsive : 0}
+                { title: "opérations", field:"operations", formatter:pdfIcon , align: "center",responsive : 0}
             ],
         });
     </script>
