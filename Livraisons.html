@@ -16,6 +16,8 @@
     <link href="css/bootstrap/tabulator_bootstrap4.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/CustomPDF.css">
 </head>
 
 <body>
@@ -124,6 +126,35 @@
     </main>
     <!--Main Layout-->
 
+    <!-- Modal -->
+    <div class="modal fade" id="pdf-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="app">
+                        <div id="toolbar">
+                            <div id="pager">
+                                <button data-pager="prev">prev</button>
+                                <button data-pager="next">next</button>
+                            </div>
+                            <div id="page-mode">
+                                <label>Page Mode <input type="number" value="1" min="1"></label>
+                            </div>
+                        </div>
+                        <div id="viewport" role="main"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modals -->
+
 
 
     <!-- JQuery -->
@@ -136,17 +167,21 @@
     <script type="text/javascript" src="js/tabulator.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-
+    <!-- Data Mock -->
     <script type="text/javascript" src="js/DataMock.js"></script>
+    <!-- PDF Core Javascript -->
+    <script type="text/javascript" src="https://unpkg.com/pdfjs-dist@latest/build/pdf.min.js"></script>
+
+    <script type="text/javascript" src="./js/CustomPDF.js"></script>
 
     <script type="text/javascript">
         var msgIcon = function (cell, formatterParams) {
             return cell.getValue() + ' <a href="#"data-toggle="modal" data-target="#basicExampleModal"><i class="far fa-envelope"></i></a>';
         };
         var pdfIcon = function (cell, formatterParams) {
-            return ' <a href="#"><i class="far fa-file-pdf fa-2x"></i></a>';
+            return ' <a href="#" data-toggle="modal" data-target="#pdf-modal"><i class="far fa-file-pdf fa-2x"></i></a>';
         };
-        
+
         var badge = function (cell, formatterParams, onRendered) {
             var result;
 
@@ -163,11 +198,14 @@
             return '<span class="badge ' + result + '">' + cell.getValue() + '</span>';
         };
 
+        $("#pdf-modal").on('shown.bs.modal', function () {
+            initPDFViewer("./doc/Guide_iTEC.pdf")
+        });
         var mainTable = new Tabulator("#main-table", {
             data: livraisonData,
             layout: "fitDataFill",
             responsiveLayout: "collapse",
-            responsiveLayoutCollapseStartOpen:false,
+            responsiveLayoutCollapseStartOpen: false,
             pagination: "local",
             paginationSize: 7,
             movableColumns: true,
@@ -177,11 +215,11 @@
                 { title: "Numero BC", field: "numeroBC", align: "left" },
                 { title: "Distributeur", field: "distributeur" },
                 { title: "Transmise Le", field: "dateTransmission", width: 200, sorter: "date", align: "center", responsive: 2 },
-                { title: "Confirmee Le", field: "dateConfirmation", width: 200, sorter: "date", align: "center" , responsive: 1},
+                { title: "Confirmee Le", field: "dateConfirmation", width: 200, sorter: "date", align: "center", responsive: 1 },
                 { title: "Numero BL", field: "numeroBl" },
                 { title: "Livraison le", field: "dateLivraison", width: 200, sorter: "date", align: "center" },
-                { title: "Status", field: "status", editor: "input", responsive : 0 },
-                { title: "opérations", field:"operations", formatter:pdfIcon , align: "center",responsive : 0}
+                { title: "Status", field: "status", editor: "input", responsive: 0 },
+                { title: "opérations", field: "operations", formatter: pdfIcon, align: "center", responsive: 0 }
             ],
         });
     </script>
