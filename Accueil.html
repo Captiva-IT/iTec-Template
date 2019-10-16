@@ -469,8 +469,9 @@
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- FullCalendar -->
+    <!-- Moment JavaScript -->
     <script type="text/javascript" src='js/moment.min.js'></script>
+    <!-- FullCalendar JavaScript -->
     <script type="text/javascript" src='js/fullcalendar.min.js'></script>
     <!-- Tabulator JavaScript -->
     <script type="text/javascript" src="js/tabulator.min.js"></script>
@@ -479,11 +480,12 @@
     <!-- Data Mock JavaScript -->
     <script type="text/javascript" src="js/DataMock.js"></script>
     <!-- Calendar JavaScript -->
-    <script src='packages/core/main.js'></script>
-    <script src='packages/interaction/main.js'></script>
-    <script src='packages/daygrid/main.js'></script>
-    <script src='packages/timegrid/main.js'></script>
-    <script src='packages/list/main.js'></script>
+    <script type="text/javascript" src='packages/core/main.js'></script>
+    <script type="text/javascript" src='packages/interaction/main.js'></script>
+    <script type="text/javascript" src='packages/daygrid/main.js'></script>
+    <script type="text/javascript" src='packages/timegrid/main.js'></script>
+    <script type="text/javascript" src='packages/list/main.js'></script>
+    <script type="text/javascript" src="./packages/core/locales-all.js"></script>
 
     <script type="text/javascript">
         var dt = new Date();
@@ -619,6 +621,8 @@
                     }
                 ]
             });
+
+            calendar.setOption('locale', 'fr');
 
             calendar.render();
         });
