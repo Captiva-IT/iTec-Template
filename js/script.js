@@ -18,6 +18,10 @@ var badge = function (cell, formatterParams, onRendered) {
     return '<span class="badge ' + result + '">' + cell.getValue() + '</span>';
 };
 
+var checkBoxIcon = function (cell, formatterPatterns) {
+    return "<input type='checkbox' name='checkbox' />";
+};
+
 $(function () {
     $('[data-toggle="popover"]').popover()
 })

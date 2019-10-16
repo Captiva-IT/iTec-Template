@@ -57,10 +57,10 @@ body,
 }
 
 .bg-yellow-mac{
-    background-color: #ffe100;
+    background-color: #ffe100 !important;
 }
 .bg-green-mac{
-    background-color: #15532a;
+    background-color: #15532a !important;
 }
 .yellow-mac{
     color: #ffe100 !important;
