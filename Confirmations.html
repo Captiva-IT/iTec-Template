@@ -98,7 +98,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="container">
@@ -220,6 +220,7 @@
                     movableColumns: true,
                     resizableRows: true,
                     responsiveLayout: "collapse",
+					responsiveLayoutCollapseStartOpen:false,
                     columns: [
                         { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                         { title: "Stockage", field: "stockage" },
