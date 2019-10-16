@@ -226,7 +226,7 @@
 
         var table = new Tabulator("#main-table", {
             data: commandeData,           //load row data from array
-            layout: "fitDataFill",      //fit columns to width of table
+            layout: "fitColumns",      //fit columns to width of table
             pagination: "local",       //paginate the data
             paginationSize: 7,         //allow 7 rows per page of data
             movableColumns: true,      //allow column order to be changed
@@ -237,10 +237,10 @@
                 { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                 { title: "Mid", field: "mid" },
                 { title: "Numero BC", field: "numeroBC", badge, width: 150, formatter: msgIcon, align: "left" },
-                { title: "type", field: "type", formatter: badge, width: 95 },
+                { title: "type", field: "type", formatter: badge },
                 { title: "A transmettre avant le", field: "aTransmettreAvant", sorter: "date", align: "center" },
-                { title: "Transmise Le", field: "tranmiseLe", width: 130, sorter: "date", align: "center" },
-                { title: "Confirmee Le", field: "confirmeLe", width: 130, sorter: "date", align: "center" },
+                { title: "Transmise Le", field: "tranmiseLe", minWidth: 130, sorter: "date", align: "center" },
+                { title: "Confirmee Le", field: "confirmeLe", minWidth: 130, sorter: "date", align: "center" },
             ],
         });
 
