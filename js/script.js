@@ -2,6 +2,10 @@ var msgIcon = function (cell, formatterParams) {
     return cell.getValue() + ' <a href="#"data-toggle="modal" data-target="#modal"><i class="far fa-envelope"></i></a>';
 };
 
+var Link = function (cell, formatterParams) {
+    return '<a href="#"data-toggle="modal" data-target="#productSpecifications-modal">'+ cell.getValue() +'</a>';
+};
+
 var badge = function (cell, formatterParams, onRendered) {
     var result;
 
