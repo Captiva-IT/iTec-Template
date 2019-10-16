@@ -28,7 +28,6 @@
     <link href='packages/list/main.css' rel='stylesheet' />
 
     <style>
-
         /* #calendar {
             max-width: 900px;
             margin: 0 auto;
@@ -67,9 +66,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./Meteo.html">Météo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./google-calendar.html">Calendrier</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav nav-flex-icons ml-auto">
@@ -339,7 +335,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="container">
@@ -349,23 +345,24 @@
                                 <h3 class="d-block">Martin BROWER</h3>
                             </div>
                             <div class="col-lg-6 col-md-6">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h6 class="text-danger">A transmettre avant le</h6>
-                                    </div>
-                                    <div class="col-6">
-                                        <h6 class="text-danger">27/11 à 09:30</h6>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h6>preparée le</h6>
-                                    </div>
-                                    <div class="col-6">
-                                        <h6>22/11 à 14:43</h6>
-                                    </div>
-                                </div>
-                                <h6> </h6>
+                                <table>
+                                    <tr>
+                                        <td align="right">
+                                            <h5>A transmettre avant le&nbsp;</h5>
+                                        </td>
+                                        <td>
+                                            <h5 class="text-danger">27/11 à 09:30</h5>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <h5>Preparée le&nbsp;</h5>
+                                        </td>
+                                        <td>
+                                            <h5>22/11 à 14:43</h5>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -479,9 +476,9 @@
     <script type="text/javascript" src="js/tabulator.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-
+    <!-- Data Mock JavaScript -->
     <script type="text/javascript" src="js/DataMock.js"></script>
-
+    <!-- Calendar JavaScript -->
     <script src='packages/core/main.js'></script>
     <script src='packages/interaction/main.js'></script>
     <script src='packages/daygrid/main.js'></script>
@@ -489,6 +486,9 @@
     <script src='packages/list/main.js'></script>
 
     <script type="text/javascript">
+        var dt = new Date();
+        document.getElementById("now").innerHTML = dt.toLocaleString().substr(0, 18);
+
         $(document).ready(function () {
             $(".card.cursor").click(function () {
                 $("#modal").modal("show");
@@ -503,6 +503,7 @@
                     movableColumns: true,
                     resizableRows: true,
                     responsiveLayout: "collapse",
+                    responsiveLayoutCollapseStartOpen: false,
                     columns: [
                         { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                         { title: "Stockage", field: "stockage" },
@@ -525,9 +526,6 @@
 
         });
 
-        $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
-
-        });
         document.addEventListener('DOMContentLoaded', function () {
             var calendarEl = document.getElementById('calendar');
 
