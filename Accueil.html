@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr" class="full-height">
+<html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8' />
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>ITec-Ma journée</title>
@@ -20,9 +21,23 @@
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
+    <link href='packages/core/main.css' rel='stylesheet' />
+    <link href='packages/daygrid/main.css' rel='stylesheet' />
+    <link href='packages/timegrid/main.css' rel='stylesheet' />
+    <link href='packages/list/main.css' rel='stylesheet' />
+
+    <style>
+
+        /* #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        } */
+    </style>
 </head>
 
 <body>
+
     <!--Main Navigation-->
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
@@ -54,7 +69,7 @@
                         <a class="nav-link" href="./Meteo.html">Météo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./Calendar.html">Calendrier</a>
+                        <a class="nav-link" href="./google-calendar.html">Calendrier</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav nav-flex-icons ml-auto">
@@ -246,7 +261,10 @@
                                         </div>
                                         <div class="tab-pane fade" id="myPlanning" role="tabpanel"
                                             aria-labelledby="myPlanning-tab">
-                                            <div id="calendar"></div>
+
+                                            <div id='calendar-container'>
+                                                <div id='calendar'></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- TABS-CONTENT -->
@@ -464,10 +482,11 @@
 
     <script type="text/javascript" src="js/DataMock.js"></script>
 
-    <script type="text/javascript">
-        var dt = new Date();
-        document.getElementById("now").innerHTML = dt.toLocaleString().substr(0, 18);
-    </script>
+    <script src='packages/core/main.js'></script>
+    <script src='packages/interaction/main.js'></script>
+    <script src='packages/daygrid/main.js'></script>
+    <script src='packages/timegrid/main.js'></script>
+    <script src='packages/list/main.js'></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -507,13 +526,22 @@
         });
 
         $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
-            $('#calendar').fullCalendar({
+
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['interaction', 'dayGrid', 'timeGrid'],
+                height: 'parent',
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'month,basicWeek,basicDay'
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
-                defaultDate: '2019-10-15',
+                defaultView: 'dayGridMonth',
+                defaultDate: '2019-08-12',
+                navLinks: true, // can click day/week names to navigate views
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
                 selectable: true,
@@ -524,91 +552,81 @@
                     $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
                     $('#ModalAdd').modal('show');
                 },
-                eventRender: function (event, element) {
-                    element.bind('dblclick', function () {
-                        $('#ModalEdit #id').val(event.id);
-                        $('#ModalEdit #title').val(event.title);
-                        $('#ModalEdit #color').val(event.color);
-                        $('#ModalEdit').modal('show');
-                    });
-                },
-                eventDrop: function (event, delta, revertFunc) { // si changement de position
-                    edit(event);
-                },
-                eventResize: function (event, dayDelta, minuteDelta, revertFunc) { // si changement de longueur
-                    edit(event);
-                },
                 events: [
                     {
-                        id: 1,
-                        title: 'LIVRAISON',
-                        start: '2019-10-17',
-                        end: '2019-10-21',
-                        color: 'green'
+                        title: 'Livraison',
+                        start: '2019-08-01',
+                        color: '#008000'
                     },
                     {
-                        id: 2,
-                        title: 'COMMANDE',
-                        start: '2019-10-17',
-                        end: '2019-10-17',
-                        color: 'blue'
+                        title: 'Commande',
+                        start: '2019-08-07',
+                        end: '2019-08-10',
+                        color: '#0071c5'
                     },
                     {
-                        id: 2,
-                        title: 'COMMANDE',
-                        start: '2019-10-19',
-                        end: '2019-10-19',
-                        color: 'blue'
+                        groupId: 999,
+                        title: 'Commande',
+                        start: '2019-08-09T16:00:00',
+                        color: '#0071c5'
                     },
                     {
-                        id: 2,
-                        title: 'LIVRAISON',
-                        start: '2019-11-01',
-                        end: '2019-11-02',
-                        color: 'green'
+                        groupId: 999,
+                        title: 'Commande',
+                        start: '2019-08-16T16:00:00',
+                        color: '#0071c5'
                     },
                     {
-                        id: 2,
-                        title: 'COMMANDE',
-                        start: '2019-10-31',
-                        end: '2019-10-31',
-                        color: 'blue'
+                        title: 'Commande',
+                        start: '2019-08-11',
+                        end: '2019-08-13',
+                        color: '#0071c5'
+                    },
+                    {
+                        title: 'Livraison',
+                        start: '2019-08-12T10:30:00',
+                        end: '2019-08-12T12:30:00',
+                        color: '#008000'
+                    },
+                    {
+                        title: 'Livraison',
+                        start: '2019-08-12T12:00:00',
+                        color: '#008000'
+                    },
+                    {
+                        title: 'Livraison',
+                        start: '2019-08-12T14:30:00',
+                        color: '#008000'
+                    },
+                    {
+                        title: 'Commande',
+                        start: '2019-08-12T17:30:00',
+                        color: '#0071c5'
+                    },
+                    {
+                        title: 'Livraison',
+                        start: '2019-08-12T20:00:00',
+                        color: '#008000'
+                    },
+                    {
+                        title: 'Commande',
+                        start: '2019-08-13T07:00:00',
+                        color: '#0071c5'
+                    },
+                    {
+                        title: 'Livraison',
+                        url: 'http://google.com/',
+                        start: '2019-08-28',
+                        color: '#008000'
                     }
                 ]
             });
 
-            function edit(event) {
-                start = event.start.format('YYYY-MM-DD HH:mm:ss');
-                if (event.end) {
-                    end = event.end.format('YYYY-MM-DD HH:mm:ss');
-                } else {
-                    end = start;
-                }
-
-                id = event.id;
-
-                Event = [];
-                Event[0] = id;
-                Event[1] = start;
-                Event[2] = end;
-
-                $.ajax({
-                    url: 'editEventDate.php',
-                    type: "POST",
-                    data: { Event: Event },
-                    success: function (rep) {
-                        if (rep == 'OK') {
-                            alert('Saved');
-                        } else {
-                            alert('Could not be saved. try again.');
-                        }
-                    }
-                });
-            }
-
-        })
+            calendar.render();
+        });
 
     </script>
+
 </body>
 
 </html>
