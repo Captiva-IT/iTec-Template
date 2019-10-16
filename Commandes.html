@@ -228,6 +228,116 @@
         </div>
     </div>
 
+    <div class="modal fade" id="productInactif-modal" tabindex="-1" role="dialog"
+        aria-labelledby="productInactifModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <h4 class="modal-title " id="productInactifModalLabel">Produits inactifs</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="table-wrapper">
+                                <div id="inactifProduct-table"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary bg-yellow-mac btn-sm" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary bg-green-mac btn-sm">Réactiver</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productSpecifications-modal" tabindex="-1" role="dialog"
+        aria-labelledby="productSpecificationsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <h4 class="modal-title " id="productSpecificationsModalLabel">Spécification des produits
+                                    bruts
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="table-wrapper">
+                                <table class="w-100 mb-5">
+                                    <tbody>
+                                        <tr>
+                                            <td>WRIN <strong>00002.015</strong></td>
+                                            <td colspan="2">Description <strong>PAIN ROYAL CONGLE</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Effetif du <strong>01/02/2003</strong></td>
+                                            <td>au <strong>31/12/2999</strong></td>
+                                            <td>MRIN <strong>00002 PAIN ROYAL</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="mb-5">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-right">Unité logistique</td>
+                                            <td class="text-left" ><strong>Paniere</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Sous-unité logistique</td>
+                                            <td class="text-left" ><strong>Paquet</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Inventaire</td>
+                                            <td class="text-left" ><strong>Hebdomadaire</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Nbr d'UU par unité logistique</td>
+                                            <td class="text-left" ><strong>50.00</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Nbr de SUL par unité logistique</td>
+                                            <td class="text-left" ><strong>2.00</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Distributeur</td>
+                                            <td class="text-left" ><strong>MARTIN BROWER</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Zone de temperature</td>
+                                            <td class="text-left" ><strong>Congelé</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal -->
 
     <!-- JQuery -->
@@ -268,6 +378,7 @@
         });
 
         var tabulator = {};
+        var inactifProduct = {};
 
         $(document).ready(function () {
             $("#modal").on('shown.bs.modal', function () {
@@ -299,6 +410,24 @@
                     ],
                 });
             });
+
+            $("#productInactif-modal").on('shown.bs.modal', function () {
+                inactifProduct = new Tabulator("#inactifProduct-table", {
+                    data: commandeInactifProductData,
+                    layout: "fitDataFill",
+                    pagination: "local",
+                    paginationSize: 7,
+                    movableColumns: true,
+                    responsiveLayout: "collapse",
+                    responsiveLayoutCollapseStartOpen: false,
+                    columns: [
+                        { title: "Code produit", field: "ProductCode" },
+                        { title: "Designation", field: "designation" },
+                        { title: "Statut", field: "Status", formatter: checkBoxIcon },
+
+                    ],
+                });
+            })
         });
     </script>
 </body>

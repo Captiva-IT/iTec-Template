@@ -49,3 +49,14 @@ var commandeDetailData = [
     { stockage: "4", code: "12867.400", designation: "LIPTON GREEN TEA", qteColis: "180,00/CT", prop: "0", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "0", sfc: "10/12/2013", qte: "0", inv: "", gamme: "NKF", },
     { stockage: "2", code: "01239.450", designation: "COCA COLA", qteColis: "80,00/CT", prop: "0", modification: "0", com: "0", type: "Libre", livJour: "0", stockTheorique: "0", sfc: "NC", qte: "NC", inv: "", gamme: "NKF", },
 ];
+
+var commandeInactifProductData = [
+    {ProductCode:"00126.465",designation:"STICK FRAISE 3",status:false},
+    {ProductCode:"00101.780",designation:"PLAT X STATIF 35X27",status:false},
+    {ProductCode:"00423.221",designation:"MKF PETIT PLATEAU X50",status:false},
+    {ProductCode:"00126.465",designation:"DRAPEAU MCD HORIZONTAL",status:false},
+    {ProductCode:"00101.780",designation:"DRAPEAU M HAPPY***",status:false},
+    {ProductCode:"00423.221",designation:"DRAPEAU MC CAFEE***",status:false},
+    {ProductCode:"00656.122",designation:"GD PLTX STRAT 41X318",status:false},
+    {ProductCode:"00676.142",designation:"DRAPEAU WIFI VERT 450X125",status:false},
+]
