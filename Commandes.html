@@ -16,6 +16,8 @@
     <link href="css/bootstrap/tabulator_bootstrap4.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
 </head>
 
 <body>
@@ -384,7 +386,7 @@
             columns: [                 //define the table columns
                 { formatter: "responsiveCollapse", width: 50, minWidth: 30, align: "center", resizable: false, headerSort: false },
                 { title: "Mid", field: "mid" },
-                { title: "Numero BC", field: "numeroBC", badge, width: 150, formatter: msgIcon, align: "left" },
+                { title: "Numero BC", field: "numeroBC", formatter: msgIcon, width: 150, formatter: msgIcon, align: "left" },
                 { title: "type", field: "type", formatter: badge },
                 { title: "A transmettre avant le", field: "aTransmettreAvant", sorter: "date", align: "center" },
                 { title: "Transmise Le", field: "tranmiseLe", minWidth: 130, sorter: "date", align: "center" },
